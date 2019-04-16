@@ -3,4 +3,4 @@ server:
 
 spring:
   application:
-    name: account-service
+    name: account-service-1

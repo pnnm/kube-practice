@@ -1,11 +1,6 @@
 server:
   port: ${server_port:8082}
 
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://eureka-server:8765/eureka/
-
 spring:
   application:
     name: account-service

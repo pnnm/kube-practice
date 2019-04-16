@@ -11,5 +11,3 @@ public class AccountServiceApplication {
     }
 
 }
-
-//(exclude = {SecurityAutoConfiguration.class })

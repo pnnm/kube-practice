@@ -36,15 +36,9 @@ public class AccountServiceImpl implements AccountService {
     @Transactional
     public String getAccountById(int accountId) {
         String str = accountRepo.getOne(accountId).toString();
-        //String trimmed = str.trim();
         JsonParser jsonParser = new JsonParser();
         JsonObject objectFromString = jsonParser.parse(str).getAsJsonObject();
         System.out.println("AccountDetails---->" + objectFromString);
-
-		/*Gson gson = new Gson();
-		Reader reader = new StringReader(str);
-		String str1 = gson.fromJson(reader, (Type) JsonObject.class);*/
-
         return String.valueOf(objectFromString);
     }
 

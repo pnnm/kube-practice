@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+<!--        <spring-cloud.version>Finchley.SR1</spring-cloud.version>-->
     </properties>
 
     <dependencies>
@@ -84,7 +84,7 @@
         </dependency>
 
     </dependencies>
-    <dependencyManagement>
+  <!--  <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -94,7 +94,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>-->
     <build>
         <plugins>
             <plugin>

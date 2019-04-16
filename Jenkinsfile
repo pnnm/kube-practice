@@ -21,7 +21,7 @@ pipeline {
     stage('Push image') {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {
-          sh '/usr/bin/docker push account-service:latest'
+          sh 'sudo /usr/bin/docker push account-service:latest'
         }
       }
     }

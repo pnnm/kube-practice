@@ -18,11 +18,6 @@ pipeline {
         sh 'echo whoami'
       }
     }
-    stage('Docker Build') {
-      steps {
-        sh '/usr/bin/docker build -t anil9848/account-service:latest .'
-      }
-    }
     stage('Push image') {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {

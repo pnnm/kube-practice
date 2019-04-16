@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    name: account-service-1
-  name: account-service-1
+    name: account-app
+  name: account-app
 spec:
   ports:
     - name: http
@@ -17,5 +17,5 @@ spec:
 
 
   selector:
-    app: account-service-1
+    app: account-app
   type: LoadBalancer

@@ -22,7 +22,6 @@ pipeline {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {
           sh 'sudo docker login https://index.docker.io/v1/ -u=anil9848 -p=Password@12345'
-          sh 'sudo docker tag account-app anil9848/account-app:latest'
           sh 'sudo /usr/bin/docker push anil9848/account-app:latest'
         }
       }

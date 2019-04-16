@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
         - name: account-service
-          image: account-service:latest
+          image: anil9848/account-service:latest
           ports:
             - containerPort: 80

@@ -10,7 +10,7 @@ spec:
         app: account-application
     spec:
       containers:
-        - name: account-app
+        - name: account-application
           image: anil9848/account-application:latest
           ports:
             - containerPort: 80

@@ -21,14 +21,14 @@ pipeline {
     stage('Push image') {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {
-          sh 'sudo /usr/bin/docker push anil9848/account-application:latest'
+          sh 'sudo /usr/bin/docker push anil9848/account-service:latest'
         }
       }
     }
     stage('push image to ECR'){
       steps {
        withDockerRegistry(credentialsId: 'ecr:us-east-1:aws-credentials', url: 'http://247755455945.dkr.ecr.us-east-1.amazonaws.com/example') {
-       sh 'docker tag anil9848/account-application:latest 247755455945.dkr.ecr.us-east-1.amazonaws.com/example'
+       sh 'docker tag anil9848/account-service:latest 247755455945.dkr.ecr.us-east-1.amazonaws.com/example'
          sh 'docker push 247755455945.dkr.ecr.us-east-1.amazonaws.com/example'
 }
       }

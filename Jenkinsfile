@@ -21,7 +21,6 @@ pipeline {
     stage('Push image') {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {
-          sh 'sudo docker login https://index.docker.io/v1/ -u=anil9848 -p=Password@12345'
           sh 'sudo /usr/bin/docker push anil9848/account-service:latest'
         }
       }
@@ -36,7 +35,7 @@ pipeline {
     }
     stage('deploy to ECR') {
       steps {
-        node('EKS-master'){
+        node('Terraform-eks'){
           checkout scm
          sh 'kubectl apply -f deployment.yaml'
          sh 'kubectl apply -f service.yaml'

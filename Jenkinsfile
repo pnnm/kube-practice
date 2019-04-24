@@ -38,8 +38,8 @@ pipeline {
       steps {
         node('Terraform-eks'){
           checkout scm
-         sh ' cd  /home/ec2-user/workspace/sample-pipeline &&  kubectl apply -f deployment.yaml'
-         sh ' cd  /home/ec2-user/workspace/sample-pipeline &&  kubectl apply -f service.yaml'
+         sh 'kubectl apply -f deployment.yaml'
+         sh 'kubectl apply -f service.yaml'
         }
       }
     }

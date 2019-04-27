@@ -13,4 +13,4 @@ spec:
         - name: account-service
           image: anil9848/account-service:latest
           ports:
-            - containerPort: 85
+            - containerPort: 80

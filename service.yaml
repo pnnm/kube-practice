@@ -17,5 +17,5 @@ spec:
 
 
   selector:
-    app: acc-service
+    app: account-service
   type: LoadBalancer

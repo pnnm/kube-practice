@@ -18,7 +18,7 @@ pipeline {
         sh 'echo whoami'
       }
     }
-    stage('Push image') {
+    stage('Push image to private docker-hub') {
       steps {
         withDockerRegistry([credentialsId: 'docker-hub', url: "https://index.docker.io/v1/"]) {
           sh 'sudo docker login https://index.docker.io/v1/ -u=anil9848 -p=Password@12345'
@@ -26,7 +26,7 @@ pipeline {
         }
       }
     }
-    stage('push image to ECR'){
+    stage('push image to AWS ECR'){
       steps {
        withDockerRegistry(credentialsId: 'ecr:us-east-1:aws-credentials', url: 'http://903218632467.dkr.ecr.us-east-1.amazonaws.com/example') {
        sh 'docker tag anil9848/account-service:latest 903218632467.dkr.ecr.us-east-1.amazonaws.com/example'
@@ -34,7 +34,7 @@ pipeline {
 }
       }
     }
-    stage('deploy to ECR') {
+    stage('run image on kubernetes cluster') {
       steps {
         node('EKS-master'){
           checkout scm

@@ -38,7 +38,6 @@ pipeline {
       steps {
         node('EKS-master'){
           checkout scm
-         sh 'aws eks --region us-east-1 update-kubeconfig --name terraform-eks'
          sh 'kubectl apply -f deployment.yaml'
          sh 'kubectl apply -f service.yaml'
         }

@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: account-service
+  name: acc-service
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: account-service
+        app: acc-service
     spec:
       containers:
-        - name: account-service
-          image: anil9848/account-service:latest
+        - name: acc-service
+          image: anil9848/acc-service:latest
           ports:
             - containerPort: 80
